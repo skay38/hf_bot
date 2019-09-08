@@ -727,6 +727,7 @@ while True:
     if h>time_now+80000:
         time_now=h
         connexion_bots()
+        print(TAB_MOTS)
         print(LIST_PSEUDO)
         print("ok !")
         attaque_baisse_dragon()
