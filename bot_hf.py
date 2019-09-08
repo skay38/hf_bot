@@ -7,7 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 from random import randrange
 import codecs
-import copyfile
+from shutil import copyfile
 #from pynput.keyboard import Key, Controller
 #keyboard = Controller()
 
