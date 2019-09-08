@@ -7,6 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 from random import randrange
 import codecs
+import copyfile
 #from pynput.keyboard import Key, Controller
 #keyboard = Controller()
 
@@ -28,6 +29,8 @@ terr_atk=6
 nb_partisan_opt=1200
 time_now=time.time()-90000
 sys.path.append(os.getcwd())
+
+copyfile("chromedriver.exe", "/app/.heroku/python/lib/python3.6/site-packages/selenium/webdriver/chrome/")
 
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
