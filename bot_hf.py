@@ -30,7 +30,7 @@ time_now=time.time()-90000
 #os.environ["PATH"] += os.pathsep + 'C:/Users/Durieu/Downloads/WPy-3670/python-3.6.7.amd64/Lib/site-packages/selenium/'
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
-TAB_MOTS=fich.read().split('\r\n')
+TAB_MOTS=fich.read().split('\n')
 fich.close()
 
 def creation_mail():
@@ -497,7 +497,7 @@ def recrute_soldats(pseudo,pseudo2,i=0):
 
 def construit_listes():
     fich=codecs.open("liste_compte.txt",'r', encoding='utf-8',errors='ignore')
-    tab=fich.read().split('\r\n')
+    tab=fich.read().split('\n')
     fich.close()
     for i in range (len(tab)-1):
         k=tab[i]
