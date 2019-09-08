@@ -39,6 +39,7 @@ def create_chromedriver(ua=False):
     options = webdriver.ChromeOptions()
     CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver.exe'
     FLASK_CONFIG = os.getenv('FLASK_CONFIG')
+    options.add_argument("--headless")
 
 
 
@@ -49,7 +50,6 @@ def create_chromedriver(ua=False):
 
         print(GOOGLE_CHROME_SHIM)
         print(GOOGLE_CHROME_SHIM)
-        options.add_argument("--headless")
         options.add_argument("--disable-gpu")
 
     if ua:
