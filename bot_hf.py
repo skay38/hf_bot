@@ -58,7 +58,7 @@ def create_chromedriver(ua=False):
         mobile_emulation =  {"deviceName": "iPad Mini"}
         options.add_experimental_option("mobileEmulation", mobile_emulation)
 
-    return webdriver.Chrome(executable_path='/app/.chromedriver/bin/chromedriver.exe', chrome_options=options)
+    return webdriver.Chrome(executable_path='/app/chromedriver.exe', chrome_options=options)
 
 def creation_mail():
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
