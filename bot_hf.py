@@ -29,7 +29,7 @@ time_now=time.time()-90000
 #os.environ["PATH"] += os.pathsep + 'C:/Users/Durieu/Downloads/WPy-3670/python-3.6.7.amd64/Lib/site-packages/selenium/'
 
 fich=open("fich_tresors.txt",'r')
-TAB_MOTS=tableau=[line.rstrip('\n') for line in fichier]
+TAB_MOTS=tableau=[line.rstrip('\n') for line in fich]
 fich.close()
 
 def creation_mail():
