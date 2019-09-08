@@ -30,9 +30,6 @@ nb_partisan_opt=1200
 time_now=time.time()-90000
 sys.path.append(os.getcwd())
 
-print(os.getcwd())
-copyfile("chromedriver.exe", "/.heroku/python/lib/python3.6/site-packages/selenium/webdriver/chrome")
-
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
 TAB_MOTS=fich.read().split('\n')
@@ -41,6 +38,7 @@ fich.close()
 def creation_mail():
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
     options = Options()
+    options.setBinary("/app/chromedriver.exe")
 #    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
     options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
@@ -54,6 +52,7 @@ def creation_compte(pseudo):
     driver,mail=creation_mail()
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
     options = Options()
+    options.setBinary("/app/chromedriver.exe")
 #    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
     options.add_argument("--headless")
     driver2 = webdriver.Chrome(options=options)
@@ -118,6 +117,7 @@ def validation_compte(driver):
 def connexion(pseudo):
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
     options = Options()
+    options.setBinary("/app/chromedriver.exe")
 #    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
     options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
