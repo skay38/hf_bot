@@ -35,13 +35,38 @@ fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
 TAB_MOTS=fich.read().split('\n')
 fich.close()
 
+def create_chromedriver(ua=False):
+    options = webdriver.ChromeOptions()
+    CHROMEDRIVER_PATH = os.getenv('$HOME') or '/app/chromedriver.exe'
+    FLASK_CONFIG = os.getenv('FLASK_CONFIG')
+
+
+
+    if FLASK_CONFIG and FLASK_CONFIG == "production":
+        # CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+        CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+        GOOGLE_CHROME_SHIM = os.getenv('$GOOGLE_CHROME_SHIM') or 'no path found'
+
+        print(GOOGLE_CHROME_SHIM)
+        print(GOOGLE_CHROME_SHIM)
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+
+    if ua:
+        print('ua block33')
+
+        mobile_emulation =  {"deviceName": "iPad Mini"}
+        options.add_experimental_option("mobileEmulation", mobile_emulation)
+
+    return webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
+
 def creation_mail():
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
-    options = Options()
-#    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
-    options.add_argument("--headless")
-    options.binary_location="/app/.apt/usr/bin/google-chrome"
-    driver = webdriver.Chrome(executable_path="/app/chromedriver.exe",options=options)
+#    options = Options()
+##    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
+#    options.add_argument("--headless")
+#    options.binary_location="/app/.apt/usr/bin/google-chrome"
+    driver = create_chromedriver()
     driver.get("https://www.mohmal.com/fr/create/random")
     elem = driver.find_element_by_class_name("email")
     mail=elem.text
@@ -51,11 +76,11 @@ def creation_mail():
 def creation_compte(pseudo):
     driver,mail=creation_mail()
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
-    options = Options()
-#    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
-    options.add_argument("--headless")
-    options.binary_location="/app/.apt/usr/bin/google-chrome"
-    driver2 = webdriver.Chrome(executable_path="/app/chromedriver.exe",options=options)
+#    options = Options()
+##    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
+#    options.add_argument("--headless")
+#    options.binary_location="/app/.apt/usr/bin/google-chrome"
+    driver2 = create_chromedriver()
     driver2.get("http://www.heroic-fantasy.fr/")
     elem = driver2.find_element_by_name("ins_pseudo")
     elem.send_keys(Keys.BACK_SPACE)
@@ -116,11 +141,11 @@ def validation_compte(driver):
 
 def connexion(pseudo):
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
-    options = Options()
-#    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
-    options.add_argument("--headless")
-    options.binary_location="/app/.apt/usr/bin/google-chrome"
-    driver = webdriver.Chrome(executable_path="/app/chromedriver.exe",options=options)
+#    options = Options()
+##    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
+#    options.add_argument("--headless")
+#    options.binary_location="/app/.apt/usr/bin/google-chrome"
+    driver = create_chromedriver()
     driver.get("http://www.heroic-fantasy.fr/")
     elem = driver.find_element_by_name("pseudo")
     elem.send_keys(Keys.BACK_SPACE)
