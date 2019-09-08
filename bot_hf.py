@@ -31,7 +31,7 @@ time_now=time.time()-90000
 sys.path.append(os.getcwd())
 
 print(os.getcwd())
-copyfile("chromedriver.exe", "/.heroku/python/lib/python3.6/site-packages/selenium/webdriver/chrome/")
+copyfile("chromedriver.exe", "/.heroku/python/lib/python3.6/site-packages/selenium/webdriver/chrome")
 
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
