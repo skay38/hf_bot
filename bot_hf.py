@@ -27,7 +27,7 @@ POURCENT_DRAGON_DESC=30
 terr_atk=6
 nb_partisan_opt=1200
 time_now=time.time()-90000
-os.environ["PATH"] += os.pathsep + os.getcwd()
+os.environ["PATH"] = os.getcwd()
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
 TAB_MOTS=fich.read().split('\n')
