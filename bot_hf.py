@@ -1,4 +1,4 @@
-#import os
+import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
@@ -27,7 +27,7 @@ POURCENT_DRAGON_DESC=30
 terr_atk=6
 nb_partisan_opt=1200
 time_now=time.time()-90000
-#os.environ["PATH"] += os.pathsep + 'C:/Users/Durieu/Downloads/WPy-3670/python-3.6.7.amd64/Lib/site-packages/selenium/'
+os.environ["PATH"] += os.pathsep + os.getcwd()
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
 TAB_MOTS=fich.read().split('\n')
