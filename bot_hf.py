@@ -44,7 +44,7 @@ def create_chromedriver(ua=False):
 
     if FLASK_CONFIG and FLASK_CONFIG == "production":
         # CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
-        CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+        CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver.exe'
         GOOGLE_CHROME_SHIM = os.getenv('$GOOGLE_CHROME_SHIM') or 'no path found'
 
         print(GOOGLE_CHROME_SHIM)
