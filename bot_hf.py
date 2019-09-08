@@ -40,7 +40,8 @@ def creation_mail():
     options = Options()
 #    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
     options.add_argument("--headless")
-    driver = webdriver.Chrome("/app/chromedriver.exe",options=options)
+    options.binary_location="/app/.apt/usr/bin/google-chrome"
+    driver = webdriver.Chrome(executable_path="/app/chromedriver.exe",options=options)
     driver.get("https://www.mohmal.com/fr/create/random")
     elem = driver.find_element_by_class_name("email")
     mail=elem.text
@@ -53,7 +54,8 @@ def creation_compte(pseudo):
     options = Options()
 #    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
     options.add_argument("--headless")
-    driver2 = webdriver.Chrome("/app/chromedriver.exe",options=options)
+    options.binary_location="/app/.apt/usr/bin/google-chrome"
+    driver2 = webdriver.Chrome(executable_path="/app/chromedriver.exe",options=options)
     driver2.get("http://www.heroic-fantasy.fr/")
     elem = driver2.find_element_by_name("ins_pseudo")
     elem.send_keys(Keys.BACK_SPACE)
@@ -117,7 +119,8 @@ def connexion(pseudo):
     options = Options()
 #    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
     options.add_argument("--headless")
-    driver = webdriver.Chrome("/app/chromedriver.exe",options=options)
+    options.binary_location="/app/.apt/usr/bin/google-chrome"
+    driver = webdriver.Chrome(executable_path="/app/chromedriver.exe",options=options)
     driver.get("http://www.heroic-fantasy.fr/")
     elem = driver.find_element_by_name("pseudo")
     elem.send_keys(Keys.BACK_SPACE)
