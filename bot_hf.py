@@ -1,4 +1,4 @@
-import os
+import sys,os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
@@ -27,7 +27,8 @@ POURCENT_DRAGON_DESC=30
 terr_atk=6
 nb_partisan_opt=1200
 time_now=time.time()-90000
-os.environ["PATH"] = os.getcwd()
+sys.path.append(os.getcwd())
+
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
 TAB_MOTS=fich.read().split('\n')
