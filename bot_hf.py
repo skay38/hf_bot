@@ -37,7 +37,7 @@ fich.close()
 
 def create_chromedriver(ua=False):
     options = webdriver.ChromeOptions()
-    CHROMEDRIVER_PATH = os.getenv('$HOME') or '/app/chromedriver.exe'
+    CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver.exe'
     FLASK_CONFIG = os.getenv('FLASK_CONFIG')
 
 
@@ -58,7 +58,7 @@ def create_chromedriver(ua=False):
         mobile_emulation =  {"deviceName": "iPad Mini"}
         options.add_experimental_option("mobileEmulation", mobile_emulation)
 
-    return webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=options)
+    return webdriver.Chrome(executable_path='/app/.chromedriver/bin/chromedriver.exe', chrome_options=options)
 
 def creation_mail():
 #    unpacked_extension_path = 'C:/Users/Durieu/Desktop/omdakjcmkglenbhjadbccaookpfjihpa/3.2.5_0'
