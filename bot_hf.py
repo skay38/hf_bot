@@ -6,6 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 from random import randrange
+import codecs
 #from pynput.keyboard import Key, Controller
 #keyboard = Controller()
 
@@ -28,8 +29,8 @@ nb_partisan_opt=1200
 time_now=time.time()-90000
 #os.environ["PATH"] += os.pathsep + 'C:/Users/Durieu/Downloads/WPy-3670/python-3.6.7.amd64/Lib/site-packages/selenium/'
 
-fich=open("fich_tresors.txt",'r')
-TAB_MOTS=tableau=[line.rstrip('\n') for line in fich]
+fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
+TAB_MOTS=fich.read().split('\n')
 fich.close()
 
 def creation_mail():
