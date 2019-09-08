@@ -30,7 +30,7 @@ nb_partisan_opt=1200
 time_now=time.time()-90000
 sys.path.append(os.getcwd())
 
-copyfile("chromedriver.exe", "/app/.heroku/python/lib/python3.6/site-packages/selenium/webdriver/chrome/")
+copyfile("chromedriver.exe", "/app/.heroku/python/lib/python3.6/site-packages/selenium/webdriver/chrome")
 
 
 fich=codecs.open("fich_tresors.txt",'r', encoding='utf-8',errors='ignore')
